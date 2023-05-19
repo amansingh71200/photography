@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">photo
+                <span>Hunt</span>er
+            </div>
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="icon">
+                <i class="fa fa-search" style="font-size:32px"></i>
+                <a href="#">logo</a>
+            </div>
+        </nav>
+        <section class="h-text">
+            <i class="fa fa-camera"><id="camera"></i>
+            <h1  data-aos="fade-down">Capturing  wild Moment</h1>
+            <input type="text"name=""placeholder="search here">
+            <button><i class="fa fa-search"></i></button>
+        </section>
+    </header>
+    <section class="filter-gallery">
+        <div class="portfolio-menu">
+            <ul>
+                <li class="active" data-filter="*">ALL</li>
+                <li data-filter=".nature">Nature</li>
+                <li data-filter=".fashion">fashion</li>
+                <li data-filter=".wild">wild</li>
+            </ul>
+        </div>
+        <div class="portfolio-item" >
+            <div class="item nature" data-aos="fade-down"> 
+                <img src="image/8jpg.JPG"  >
+            </div>
+            <div class="item fashion"> 
+                <img src="image/5jpg.JPG" >
+            </div>
+            <div class="item wild"> 
+                <img src="image/1jpg.JPG"  >
+            </div>
+           
+                <div class="item nature"> 
+                    <img src="image/9jpg.JPG" >
+                </div>
+                <div class="item fashion"> 
+                    <img src="image/6jpg.JPG" >
+                </div>
+                <div class="item wild"> 
+                    <img src="image/2jpg.JPG" >
+                </div>
+               
+                    <div class="item nature"> 
+                        <img src="image/3jpg.JPG"  >
+                    </div>
+                    <div class="item fashion"> 
+                        <img src="image/7jpg.JPG"   >
+                    </div>
+                    <div class="item wild"> 
+                        <img src="image/4jpg.JPG"  >
+                    </div>  
+        </div>  
+    </section>
+    <section class="member">
+<div class="member-info">
+     <h1>our  <span>Informations</span></h1>
+     <P>what our team eays</P><br> <br>
+</div>
+<div class="member-card">
+<img src="/image/member.png" >
+ <p>welcome to this page you can also visit on <a href="https://youtu.be/BiFZYozkMVc">touch here </a> our youtube channel to know more</p> 
+
+ <h2>aman singh</h2>
+<img src="image/icon1.png"width="100" >
+<img src="image/icon2.png"width="100" >
+<img src="image/icon3.png"width="100" >
+<img src="image/icon4.png"width="100" >
+</div>
+
+<div class="m-images">
+    <img src="image/s1.jpg" >
+    <img src="image/s2.jpg" >
+    <img src="image/s3.jpg" >
+    <img src="image/s4.jpg" >
+    <img src="image/s5.jpg" >
+    <img src="image/s6.jpg" >
+
+</div>
+<footer>
+    <div class="newsletter">
+        <div>
+            <h2>subscribe our news later</h2>
+            <p>"The camera is an without a camera."</p>
+        </div>
+        <div class="ntext">
+            <label >
+                <input type="text"name="" placeholder="Enter your email">
+                <button>subscribe</button>
+        
+            </label>
+        </div>
+        </div>
+        <div class="f-contact">
+        <div>
+			<h1 style="color: aliceblue;">Information</h1> 
+			<p>.our aim is to make our photography website easy to handle</p>
+			
+			<i class="fa fa-whatsapp"></i>
+			<i class="fa fa-instagram"></i>
+			<i class="fa fa-telegram"></i>
+			<i class="fa fa-twitter"></i>
+		</div>
+
+
+		<div>
+			<h1>Useful links</h1>
+			<p>About us</p>
+			<p>Gallery</p>
+			<p>Blog posts</p>
+			<p>Pricing plans</p>
+
+		</div>
+
+		<div>
+			<h1>Details</h1>
+			<p>Photographers</p>
+			<p>Gallery</p>
+			<p>About</p>
+			<p>Pricing plans</p>
+
+		</div>
+
+		<div>
+			<h1>Help & Support</h1>
+			<p>Privacy policy</p>
+			<p>Term & conditions</p>
+			<p>Technical support</p>
+			<p>Customer care</p>
+
+		</div>
+	</div>
+</footer>
+
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script>
+        $('.portfolio-item').isotope({
+  // options
+  itemSelector: '.item',
+  layoutMode: 'fitRows'
+});
+
+    $('.portfolio-menu ul li').click(function(){
+    $('.portfolio-menu ul li').removeClass('active');
+    $(this).addClass('active');
+
+
+        var selector =$(this).attr('data-filter');
+        $('.portfolio-item').isotope({
+            filter:selector
+        });
+        return false;
+    });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
